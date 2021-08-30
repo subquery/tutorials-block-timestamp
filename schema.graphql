@@ -1,0 +1,8 @@
+type BlockTs @entity {
+  # BlockHash
+  id: ID!
+
+  blockHeight: BigInt!
+
+  timestamp: Date!
+}
