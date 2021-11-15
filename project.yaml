@@ -1,17 +1,18 @@
-specVersion: "0.0.1"
-description: "This subquery project indexes the timestamp of each finalized block"
-repository: "https://github.com/subquery/subql-examples"
-
-schema: "./schema.graphql"
-
+specVersion: 0.2.0
+name: block-timestamp
+version: 0.1.0
+description: This subquery project indexes the timestamp of each finalized block
+repository: https://github.com/subquery/subql-examples
+schema:
+  file: ./schema.graphql
 network:
-  endpoint: "wss://polkadot.api.onfinality.io/public-ws"
-
+  genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3'
+  endpoint: wss://polkadot.api.onfinality.io/public-ws
 dataSources:
-  - name: runtime
-    kind: substrate/Runtime
+  - kind: substrate/Runtime
     startBlock: 1
     mapping:
+      file: dist/index.js
       handlers:
         - handler: handleTimestampSet
           kind: substrate/CallHandler
