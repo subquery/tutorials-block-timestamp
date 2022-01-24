@@ -1,1 +1,2 @@
-export * from './mappings/BlockTs';
+import "@polkadot/api-augment";
+export * from "./mappings/BlockTs";
